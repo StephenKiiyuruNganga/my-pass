@@ -1,4 +1,3 @@
-from operator import le
 import tkinter
 from tkinter import messagebox
 
