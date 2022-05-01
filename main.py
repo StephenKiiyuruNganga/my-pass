@@ -1,3 +1,4 @@
+import json
 from ntpath import join
 import tkinter
 from tkinter import messagebox
@@ -41,6 +42,12 @@ def save_data():
     website = website_input.get().strip(" ")
     email = email_input.get().strip(" ")
     password = password_input.get().strip(" ")
+    website_dict = {
+        website: {
+            "email": email,
+            "password": password
+        }
+    }
 
     if len(website) == 0 or len(email) == 0 or len(password) == 0:
         messagebox.showwarning(title="Oops",
@@ -50,8 +57,21 @@ def save_data():
                                        message=f"These are the details you entered: \nEmail: {email} \nPassword: {password} \nIs it okay to save?")
 
         if is_ok:
-            with open(file="./data.txt", mode="a") as file:
-                file.write(f"{website} | {email} | {password}\n")
+            try:
+                # read existing data
+                with open("data.json", "r") as file:
+                    content = json.load(file)
+            except (FileNotFoundError, json.JSONDecodeError):
+                with open("data.json", "w") as file:
+                    json.dump(website_dict, file, indent=2)
+            else:
+                # update existing data
+                content.update(website_dict)
+                # save updated data
+                with open(file="data.json", mode="w") as file:
+                    json.dump(content, file, indent=2)
+            finally:
+                # clear inputs
                 website_input.delete(0, tkinter.END)
                 password_input.delete(0, tkinter.END)
 
