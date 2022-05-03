@@ -17,7 +17,7 @@ A python program that helps you keep track of your online accounts by saving the
 - [ ]  Store passwords in a secure format, not plain text
 - [ ]  Improve UI look and feel
 - [ ]  Customize password generation
-- [ ]  Search for a particular account
+- [x]  Search for a particular account
 
 ## Dependencies
 
