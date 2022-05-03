@@ -11,6 +11,7 @@ A python program that helps you keep track of your online accounts by saving the
 - Generate strong random passwords
 - Copies generated password to clipboard
 - Input validation
+- Search for an account
 
 ## Roadmap
 
