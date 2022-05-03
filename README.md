@@ -3,8 +3,7 @@ A python program that helps you keep track of your online accounts by saving the
 
 ## Screenshot
 
-![my-pass](https://user-images.githubusercontent.com/40911055/165901859-35c73ef5-0e3a-4f18-83a7-e2205bfa1075.png)
-
+![my-pass](https://user-images.githubusercontent.com/40911055/166404313-9fc8e638-7f7a-4164-913f-9028e36a1648.png)
 
 ## Features
 
